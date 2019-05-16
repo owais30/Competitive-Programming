@@ -1,0 +1,47 @@
+#include<iostream>
+
+using namespace std;
+
+int arr[100][100];
+int memo[100][100];
+
+
+int ways(int n,int m,int pos,int next)
+{
+    int move[] = {-1, 0, 1};
+    if(pos == m) return 0;
+    int curr = next;
+    if(memo[curr][pos] != -1) return memo[curr][pos];
+    int ans = 2000000;
+    for(int k=0;k<3;k++)
+    {
+        next = curr + move[k];
+        if(next < 0) next = n-1;
+        if(next > n-1) next = 0;
+        
+        ans = min(ans, arr[curr][pos] + ways(n, m, pos + 1, next));
+    }
+    return memo[curr][pos] = ans;
+}
+
+int main()
+{
+    int n,m;
+    while(scanf("%d %d", &n, &m) == 2)
+    {
+        
+
+        for(int i=0;i<n;i++)
+            for(int j=0;j<m;j++)
+                scanf("%d", &arr[i][j]);
+        
+        for(int i=0;i<100;i++)
+            for(int j=0;j<100;j++)
+                memo[i][j] = -1;
+        int final = 20000000;
+        for(int i=0;i<n;i++)
+            final = min(final, ways(n,m,0,i));
+        
+        printf("%d\n", final);
+    }
+}
