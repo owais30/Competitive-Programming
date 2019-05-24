@@ -22,3 +22,12 @@ void dfs(int u)
    }
 } 
  // for simple graph traversal, we ignore the weight stored at v.second
+
+
+/* Pair in cpp
+pair (data_type1, data_type2) Pair_name (value1, value2) ;
+pair  g1;         //default
+pair  g2(1, 'a');  //initialized,  different data type
+pair  g3(1, 10);   //initialized,  same data type
+pair  g4(g3);    //copy of g3
+*/
