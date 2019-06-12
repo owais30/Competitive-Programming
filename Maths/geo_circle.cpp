@@ -33,6 +33,8 @@ bool circle2PtsRad(point p1, point p2, double r, point &c) {
   c.y = (p1.y + p2.y) * 0.5 + (p2.x - p1.x) * h;
   return true; }         // to get the other center, reverse p1 and p2
 
+//length of chord = sqrt(2 * r^2 * (1 - cos(angle)))
+
 int main() {
   // circle equation, inside, border, outside
   point_i pt(2, 2);
