@@ -152,11 +152,11 @@ double angle(point a, point o, point b) {  // returns angle aob in rad
 double cross(vec a, vec b) { return a.x * b.y - a.y * b.x; }
 
 //// another variant
-//int area2(point p, point q, point r) { // returns 'twice' the area of this triangle A-B-c
-//  return p.x * q.y - p.y * q.x +
-//         q.x * r.y - q.y * r.x +
-//         r.x * p.y - r.y * p.x;
-//}
+int area2(point p, point q, point r) { // returns 'twice' the area of this triangle A-B-c
+ return p.x * q.y - p.y * q.x +
+        q.x * r.y - q.y * r.x +
+        r.x * p.y - r.y * p.x;
+}
 
 // note: to accept collinear points, we have to change the `> 0'
 // returns true if point r is on the left side of line pq
